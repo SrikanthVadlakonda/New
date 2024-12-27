@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval Example</title>
+</head>
+<body>
+    <h1>setInterval Example</h1>
+    <button id="startInterval">Start Counter</button>
+    <button id="stopInterval">Stop Counter</button>
+    <p>Counter: <span id="counter">0</span></p>
+
+    <script>
+        let count = 0;
+        let intervalId;
+
+        const counterDisplay = document.getElementById("counter");
+        const startInterval = document.getElementById("startInterval");
+        const stopInterval = document.getElementById("stopInterval");
+
+        // Start the interval
+        startInterval.addEventListener("click", () => {
+            intervalId = setInterval(() => {
+                count++;
+                counterDisplay.textContent = count;
+            }, 1000); // Increment every 1 second
+        });
+
+        // Stop the interval
+        stopInterval.addEventListener("click", () => {
+            clearInterval(intervalId);
+        });
+    </script>
+</body>
+</html>

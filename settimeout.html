@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and clearTimeout</title>
+</head>
+<body>
+    <h1>Cancel Timeout</h1>
+    <button id="startTimeout">Start Timeout</button>
+    <button id="cancelTimeout">Cancel Timeout</button>
+    <p id="message">Waiting...</p>
+
+    <script>
+        let timeoutId;
+        const message = document.getElementById("message");
+
+        document.getElementById("startTimeout").addEventListener("click", () => {
+            timeoutId = setTimeout(() => {
+                message.textContent = "Timeout executed!";
+            }, 5000); // 5 seconds
+        });
+
+        document.getElementById("cancelTimeout").addEventListener("click", () => {
+            clearTimeout(timeoutId);
+            message.textContent = "Timeout canceled!";
+        });
+    </script>
+</body>
+</html>

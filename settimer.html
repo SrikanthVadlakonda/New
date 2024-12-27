@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout Example</title>
+</head>
+<body>
+    <h1>setTimeout Example</h1>
+    <button id="timeoutBtn">Start Timer</button>
+    <p id="timeoutText">Wait for 3 seconds...</p>
+
+    <script>
+        const timeoutBtn = document.getElementById("timeoutBtn");
+        const timeoutText = document.getElementById("timeoutText");
+
+        timeoutBtn.addEventListener("click", () => {
+            // Change the text after 3 seconds
+            setTimeout(() => {
+                timeoutText.textContent = "3 seconds are over!";
+            }, 3000); // 3000ms = 3 seconds
+        });
+    </script>
+</body>
+</html>
